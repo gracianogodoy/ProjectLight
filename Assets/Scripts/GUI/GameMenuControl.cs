@@ -21,5 +21,9 @@ public class GameMenuControl : MonoBehaviour
         {
             Time.timeScale = 0;
         }
+        else
+        {
+            Time.timeScale = 1;
+        }
     }
 }
