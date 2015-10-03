@@ -2,30 +2,44 @@
 using System.Collections;
 
 public class ObstacleGeneration : MonoBehaviour {
-
-	int contadorTimerManqueba;
+	
 	public GameObject Obstacle;
+	public GameObject Light1;
+	public GameObject Light2;
+	public GameObject Light3;
+
+
+
+	int ContadorTimerObstaculos;
+	int ContadorTimerLuzes;
 	public float DistanceToOrigin;
 	Vector3 Origin;
 	public float dispersionRange;
 	public float RotateSpeed;
 	bool MovingNear = true;
 	public float AproximationSpeed;
-	public int TaxaDeRepetiçao;
+	public int TaxaDeRepetiçaoObstaculos;
+	public int TaxaDeRepetiçaoLuzes;
 
 	// Use this for initialization
 	void Start () {
-		contadorTimerManqueba = 0;
+		ContadorTimerObstaculos = 0;
 		Origin = new Vector3(DistanceToOrigin,0,DistanceToOrigin);
 	}
 	
 	// Update is called once per frame
 	void Update () {
-		contadorTimerManqueba++;
-		if (contadorTimerManqueba >= TaxaDeRepetiçao) {
-			CreateObstacle(1,0,0.4f,3);
-			contadorTimerManqueba=0;
-			TaxaDeRepetiçao += Random.Range(-1,2);
+		ContadorTimerObstaculos++;
+		if (ContadorTimerObstaculos >= TaxaDeRepetiçaoObstaculos) {
+			CreateObstacle(2,0,0.4f,3);
+			ContadorTimerObstaculos=0;
+			TaxaDeRepetiçaoObstaculos += Random.Range(-1,2);
+		}
+
+		ContadorTimerLuzes++;
+		if (ContadorTimerLuzes >= TaxaDeRepetiçaoLuzes) {
+			CreateObstacle(1,1,0.6f,3);
+			ContadorTimerLuzes=0;
 		}
 		
 		ChangeDistance();
@@ -66,8 +80,33 @@ public class ObstacleGeneration : MonoBehaviour {
 	void CreateObstacle(int quantity, int type,float speed,float angle){
 		for (int i = 0; i < quantity; i++) {
 			
-			GameObject g = (GameObject)Instantiate(Obstacle,Origin,Quaternion.identity);
-			MoveToScreen m = g.GetComponent<MoveToScreen> ();
+			GameObject g = null;
+			GameObject a =null;
+			MoveToScreen m;
+			switch (type) {
+
+				case 0:				
+				a= Obstacle;
+				break;
+
+			case 1:
+				a= Light1;
+				break;
+
+			case 2:
+				a= Light2;
+
+				break;
+
+
+			case 3:
+				a= Light3;
+				break;
+
+			}
+			
+			g = (GameObject)Instantiate(a,Origin,Quaternion.identity);
+			m = g.GetComponent<MoveToScreen> ();
 			m.Destination = randomDestination();
 			m.Speed = speed;
 			m.angle = angle;

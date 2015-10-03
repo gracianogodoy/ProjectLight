@@ -27,6 +27,12 @@ public class MoveToScreen : MonoBehaviour {
 		
 	}
 
+	void cleanUp(){
+		if (transform.position.z > 10) {
+			Destroy(this);
+		
+		}
 
+	}
 
 }
