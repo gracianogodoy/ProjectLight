@@ -28,7 +28,7 @@ public class Sfx : MonoBehaviour {
 		if (this.gameObject.name == "Foton1(Clone)")
 		{
 			AudioManager.Instance.Play ("ColisaoBoaVermelha");
-			Debug.Log ("teste");
+
 		}
 
 		Destroy (this.gameObject);

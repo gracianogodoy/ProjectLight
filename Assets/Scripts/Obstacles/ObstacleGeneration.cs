@@ -29,12 +29,13 @@ public class ObstacleGeneration : MonoBehaviour {
 	}
 	
 	// Update is called once per frame
-	void Update () {
+	void FixedUpdate () {
 		ContadorTimerObstaculos++;
 		if (ContadorTimerObstaculos >= TaxaDeRepetiçaoObstaculos) {
 			CreateObstacle(4,0,0.4f,3);
 			ContadorTimerObstaculos=0;
 			TaxaDeRepetiçaoObstaculos += Random.Range(-1,2);
+
 		}
 
 		ContadorTimerLuzes++;
