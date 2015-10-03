@@ -18,8 +18,19 @@ public class Sfx : MonoBehaviour {
 	{
 		GameObject cam = GameObject.Find("Main Camera");
 		CameraShake shake = (CameraShake)cam.GetComponent (typeof(CameraShake));
-		shake.shake = 0.5f;
-		AudioManager.Instance.Play ("ColisaoRuim");
+
+		if (this.gameObject.name == "Obstacle1(Clone)")
+		{
+			AudioManager.Instance.Play ("ColisaoRuim");
+			shake.shake = 0.5f;
+		}
+
+		if (this.gameObject.name == "Foton1(Clone)")
+		{
+			AudioManager.Instance.Play ("ColisaoBoaVermelha");
+			Debug.Log ("teste");
+		}
+
 		Destroy (this.gameObject);
 
 	}
