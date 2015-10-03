@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
+using System.Collections.Generic;
 
 public class ObstacleGeneration : MonoBehaviour {
 	
@@ -31,7 +32,7 @@ public class ObstacleGeneration : MonoBehaviour {
 	void Update () {
 		ContadorTimerObstaculos++;
 		if (ContadorTimerObstaculos >= TaxaDeRepetiçaoObstaculos) {
-			CreateObstacle(2,0,0.4f,3);
+			CreateObstacle(4,0,0.4f,3);
 			ContadorTimerObstaculos=0;
 			TaxaDeRepetiçaoObstaculos += Random.Range(-1,2);
 		}
@@ -78,6 +79,7 @@ public class ObstacleGeneration : MonoBehaviour {
 	/// <param name="speed">Speed of the obstacles</param>
 	/// <param name="angle">How much the obstacle bends towards the screen</param>
 	void CreateObstacle(int quantity, int type,float speed,float angle){
+		Queue<Vector3> positions = ObstaclePositions(quantity);
 		for (int i = 0; i < quantity; i++) {
 			
 			GameObject g = null;
@@ -107,7 +109,8 @@ public class ObstacleGeneration : MonoBehaviour {
 			
 			g = (GameObject)Instantiate(a,Origin,Quaternion.identity);
 			m = g.GetComponent<MoveToScreen> ();
-			m.Destination = randomDestination();
+			//Debug.Log(positions.Peek());
+			m.Destination = positions.Dequeue();
 			m.Speed = speed;
 			m.angle = angle;
 			
@@ -115,13 +118,27 @@ public class ObstacleGeneration : MonoBehaviour {
 		
 	}
 
+	Queue<Vector3> ObstaclePositions(int num){
+		Queue <Vector3> positions = new Queue <Vector3>();
+		for (int i = 0; i < num; i++) {
+			Vector3 newPosition;
+			bool error;
+			do{
+				error = false;
+				newPosition = new Vector3 ((int)(5*Random.Range(-dispersionRange,dispersionRange)),(int)(5*(int)Random.Range(-dispersionRange,dispersionRange)),-15);
+				if (positions.Contains(newPosition)) {
+					error =true;
+				}					
 
+			}while(error);
+			positions.Enqueue(newPosition);
+		}
+		return positions;
 
-	Vector3 randomDestination(){
-		return new Vector3 (Random.Range(-dispersionRange,dispersionRange),Random.Range(-dispersionRange,dispersionRange),-25);
-	
-	
 	}
+
+
+
 
 
 }

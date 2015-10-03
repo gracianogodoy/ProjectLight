@@ -16,19 +16,19 @@ public class MoveToScreen : MonoBehaviour {
 	void Update () {
 
 		moveToDestination ();
-
+		cleanUp ();
 	}
 
 	void moveToDestination(){
 		Vector3 centralAxis = new Vector3 (0, 0, transform.position.z);
 		Vector3 direction = (Destination - transform.position) + angle*(centralAxis - transform.position);
 		direction.Normalize ();
-		transform.position += direction*Speed;
+		transform.position += direction*Speed*Time.timeScale;
 		
 	}
 
 	void cleanUp(){
-		if (transform.position.z > 10) {
+		if (transform.position.z < -11) {
 			Destroy(this);
 		
 		}
