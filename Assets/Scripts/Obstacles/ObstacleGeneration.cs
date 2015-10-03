@@ -15,7 +15,7 @@ public class ObstacleGeneration : MonoBehaviour {
 	int ContadorTimerLuzes;
 	public float DistanceToOrigin;
 	Vector3 Origin;
-	public float dispersionRange;
+	public int dispersionRange;
 	public float RotateSpeed;
 	bool MovingNear = true;
 	public float AproximationSpeed;
@@ -110,7 +110,7 @@ public class ObstacleGeneration : MonoBehaviour {
 			
 			g = (GameObject)Instantiate(a,Origin,Quaternion.identity);
 			m = g.GetComponent<MoveToScreen> ();
-			//Debug.Log(positions.Peek());
+			//Debug.Log(i.ToString() + positions.Peek().ToString());
 			m.Destination = positions.Dequeue();
 			m.Speed = speed;
 			m.angle = angle;
@@ -126,7 +126,7 @@ public class ObstacleGeneration : MonoBehaviour {
 			bool error;
 			do{
 				error = false;
-				newPosition = new Vector3 ((int)(5*Random.Range(-dispersionRange,dispersionRange)),(int)(5*(int)Random.Range(-dispersionRange,dispersionRange)),-15);
+				newPosition = new Vector3 ((int)(5*Random.Range(-dispersionRange,dispersionRange+1)),(int)(5*Random.Range(-dispersionRange,dispersionRange+1)),-15);
 				if (positions.Contains(newPosition)) {
 					error =true;
 				}					
