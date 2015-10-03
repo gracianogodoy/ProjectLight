@@ -40,7 +40,7 @@ public class ObstacleGeneration : MonoBehaviour {
 
 		ContadorTimerLuzes++;
 		if (ContadorTimerLuzes >= TaxaDeRepetiçaoLuzes) {
-			CreateObstacle(1,1,0.6f,3);
+			CreateLight(1,1,0.6f,3);
 			ContadorTimerLuzes=0;
 		}
 		
@@ -92,19 +92,6 @@ public class ObstacleGeneration : MonoBehaviour {
 				a= Obstacle;
 				break;
 
-			case 1:
-				a= Light1;
-				break;
-
-			case 2:
-				a= Light2;
-
-				break;
-
-
-			case 3:
-				a= Light3;
-				break;
 
 			}
 			
@@ -112,6 +99,48 @@ public class ObstacleGeneration : MonoBehaviour {
 			m = g.GetComponent<MoveToScreen> ();
 			//Debug.Log(i.ToString() + positions.Peek().ToString());
 			m.Destination = positions.Dequeue();
+			m.Speed = speed;
+			m.angle = angle;
+			
+		}
+		
+	}
+	/// <summary>
+	/// Creates the obstacle.
+	/// </summary>
+	/// <param name="quantity">How many obstacles are generated.</param>
+	/// <param name="type">Type of the obstacles generated</param>
+	/// <param name="speed">Speed of the obstacles</param>
+	/// <param name="angle">How much the obstacle bends towards the screen</param>
+	void CreateLight(int quantity, int type,float speed,float angle){
+		for (int i = 0; i < quantity; i++) {
+			
+			GameObject g = null;
+			GameObject a =null;
+			MoveToScreen m;
+			switch (type) {
+
+				
+			case 1:
+				a= Light1;
+				break;
+				
+			case 2:
+				a= Light2;
+				
+				break;
+				
+				
+			case 3:
+				a= Light3;
+				break;
+				
+			}
+			
+			g = (GameObject)Instantiate(a,Origin,Quaternion.identity);
+			m = g.GetComponent<MoveToScreen> ();
+			//Debug.Log(i.ToString() + positions.Peek().ToString());
+			m.Destination = new Vector3 ((int)(4*Random.Range(-dispersionRange,dispersionRange+1)),(int)(4*Random.Range(-dispersionRange,dispersionRange+1)),-15);
 			m.Speed = speed;
 			m.angle = angle;
 			
