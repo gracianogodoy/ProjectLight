@@ -1,38 +1,28 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class MoveToScreen : MonoBehaviour {
+public class MoveToScreen : MonoBehaviour
+{
 
-	public Vector3 Destination;
-	public float Speed;
-	public float angle;
+    public Vector3 Destination;
+    public float Speed;
+    public float angle;
 
-	// Use this for initialization
-	void Start () {
+    // Update is called once per frame
+    void Update()
+    {
 
-	}
-	
-	// Update is called once per frame
-	void Update () {
+        moveToDestination();
+    }
 
-		moveToDestination ();
-		cleanUp ();
-	}
+    void moveToDestination()
+    {
+        Vector3 centralAxis = new Vector3(0, 0, transform.position.z);
+        Vector3 direction = (Destination - transform.position) + angle * (centralAxis - transform.position);
+        direction.Normalize();
+        transform.position += direction * Speed * Time.timeScale;
 
-	void moveToDestination(){
-		Vector3 centralAxis = new Vector3 (0, 0, transform.position.z);
-		Vector3 direction = (Destination - transform.position) + angle*(centralAxis - transform.position);
-		direction.Normalize ();
-		transform.position += direction*Speed*Time.timeScale;
-		
-	}
+    }
 
-	void cleanUp(){
-		if (transform.position.z < -11) {
-			Destroy(this);
-		
-		}
-
-	}
 
 }
