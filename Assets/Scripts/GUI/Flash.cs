@@ -3,7 +3,7 @@ using System.Collections;
 
 public class Flash : MonoBehaviour {
 	public bool fadeAtivado = false;
-	public float tempoTotalDeFlash = 3;
+	public float tempoTotalDeFlash = 2;
 	public float alpha = 0;
 	public float velocidadeFade = 0.01f;
 	public CanvasRenderer canvas;
