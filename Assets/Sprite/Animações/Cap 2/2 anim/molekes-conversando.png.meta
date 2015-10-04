@@ -1,9 +1,34 @@
 fileFormatVersion: 2
 guid: 3f548cc1a76e12e48a2553ee541dc13e
-timeCreated: 1443980509
+timeCreated: 1443987070
 licenseType: Free
 TextureImporter:
-  fileIDToRecycleName: {}
+  fileIDToRecycleName:
+    21300000: molekes-conversando_0
+    21300002: molekes-conversando_1
+    21300004: molekes-conversando_2
+    21300006: molekes-conversando_3
+    21300008: molekes-conversando_4
+    21300010: molekes-conversando_5
+    21300012: molekes-conversando_6
+    21300014: molekes-conversando_7
+    21300016: molekes-conversando_8
+    21300018: molekes-conversando_9
+    21300020: molekes-conversando_10
+    21300022: molekes-conversando_11
+    21300024: molekes-conversando_12
+    21300026: molekes-conversando_13
+    21300028: molekes-conversando_14
+    21300030: molekes-conversando_15
+    21300032: molekes-conversando_16
+    21300034: molekes-conversando_17
+    21300036: molekes-conversando_18
+    21300038: molekes-conversando_19
+    21300040: molekes-conversando_20
+    21300042: molekes-conversando_21
+    21300044: molekes-conversando_22
+    21300046: molekes-conversando_23
+    21300048: molekes-conversando_24
   serializedVersion: 2
   mipmaps:
     mipMapMode: 0
@@ -30,26 +55,146 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     filterMode: -1
-    aniso: -1
+    aniso: 16
     mipBias: -1
-    wrapMode: -1
-  nPOTScale: 1
+    wrapMode: 1
+  nPOTScale: 0
   lightmap: 0
   rGBM: 0
   compressionQuality: 50
   allowsAlphaSplitting: 0
-  spriteMode: 0
+  spriteMode: 2
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: .5, y: .5}
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spritePixelsToUnits: 100
-  alphaIsTransparency: 0
-  textureType: -1
+  alphaIsTransparency: 1
+  textureType: 8
   buildTargetSettings: []
   spriteSheet:
-    sprites: []
+    sprites:
+    - name: molekes-conversando_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 334
+        width: 290
+        height: 334
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: molekes-conversando_1
+      rect:
+        serializedVersion: 2
+        x: 290
+        y: 334
+        width: 290
+        height: 334
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: molekes-conversando_2
+      rect:
+        serializedVersion: 2
+        x: 580
+        y: 334
+        width: 290
+        height: 334
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: molekes-conversando_3
+      rect:
+        serializedVersion: 2
+        x: 870
+        y: 334
+        width: 290
+        height: 334
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: molekes-conversando_4
+      rect:
+        serializedVersion: 2
+        x: 1160
+        y: 334
+        width: 290
+        height: 334
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: molekes-conversando_5
+      rect:
+        serializedVersion: 2
+        x: 1450
+        y: 334
+        width: 290
+        height: 334
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: molekes-conversando_6
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 290
+        height: 334
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: molekes-conversando_7
+      rect:
+        serializedVersion: 2
+        x: 290
+        y: 0
+        width: 290
+        height: 334
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: molekes-conversando_8
+      rect:
+        serializedVersion: 2
+        x: 580
+        y: 0
+        width: 290
+        height: 334
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: molekes-conversando_9
+      rect:
+        serializedVersion: 2
+        x: 870
+        y: 0
+        width: 290
+        height: 334
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: molekes-conversando_10
+      rect:
+        serializedVersion: 2
+        x: 1160
+        y: 0
+        width: 290
+        height: 334
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: molekes-conversando_11
+      rect:
+        serializedVersion: 2
+        x: 1450
+        y: 0
+        width: 290
+        height: 334
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
   spritePackingTag: 
   userData: 
   assetBundleName: 
