@@ -53,12 +53,12 @@ public class ObstacleGeneration : MonoBehaviour {
 	void FixedUpdate () {
 		if (obstaculosAtivados)
 		{
+			int taxaAtual = TaxaDeRepetiçaoObstaculos + Random.Range(-1, 2);
 			ContadorTimerObstaculos++;
-			if (ContadorTimerObstaculos >= TaxaDeRepetiçaoObstaculos) {
+			if (ContadorTimerObstaculos >= taxaAtual) {
 				CreateObstacle(quantidadeObs, tipoObs, velocidadeObs, anguloObs);
 				CreateRoamingLight(quantidadeVagantes,tipoVagantes,velocidadeVagantes,anguloVagantes);
 				ContadorTimerObstaculos=0;
-				TaxaDeRepetiçaoObstaculos += Random.Range(-1,2);
 
 			}
 
