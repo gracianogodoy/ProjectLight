@@ -1,0 +1,188 @@
+fileFormatVersion: 2
+guid: a0350cc918c09d347ad1cc3dcdf4f032
+timeCreated: 1443987840
+licenseType: Free
+TextureImporter:
+  fileIDToRecycleName:
+    21300000: enforcada_0
+    21300002: enforcada_1
+    21300004: enforcada_2
+    21300006: enforcada_3
+    21300008: enforcada_4
+    21300010: enforcada_5
+    21300012: enforcada_6
+    21300014: enforcada_7
+    21300016: enforcada_8
+    21300018: enforcada_9
+    21300020: enforcada_10
+    21300022: enforcada_11
+  serializedVersion: 2
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 1
+    linearTexture: 0
+    correctGamma: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: .25
+    normalMapFilter: 0
+  isReadable: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 0
+  cubemapConvolution: 0
+  cubemapConvolutionSteps: 8
+  cubemapConvolutionExponent: 1.5
+  seamlessCubemap: 0
+  textureFormat: -1
+  maxTextureSize: 2048
+  textureSettings:
+    filterMode: -1
+    aniso: 16
+    mipBias: -1
+    wrapMode: 1
+  nPOTScale: 0
+  lightmap: 0
+  rGBM: 0
+  compressionQuality: 50
+  allowsAlphaSplitting: 0
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: .5, y: .5}
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spritePixelsToUnits: 100
+  alphaIsTransparency: 1
+  textureType: 8
+  buildTargetSettings: []
+  spriteSheet:
+    sprites:
+    - name: enforcada_0
+      rect:
+        serializedVersion: 2
+        x: 178
+        y: 766
+        width: 216
+        height: 531
+      alignment: 9
+      pivot: {x: .416792125, y: .915836751}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: enforcada_1
+      rect:
+        serializedVersion: 2
+        x: 651
+        y: 769
+        width: 201
+        height: 528
+      alignment: 9
+      pivot: {x: .416969419, y: .913336754}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: enforcada_2
+      rect:
+        serializedVersion: 2
+        x: 1125
+        y: 770
+        width: 183
+        height: 527
+      alignment: 9
+      pivot: {x: .408802122, y: .918993056}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: enforcada_3
+      rect:
+        serializedVersion: 2
+        x: 1598
+        y: 772
+        width: 185
+        height: 523
+      alignment: 9
+      pivot: {x: .375091732, y: .917288363}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: enforcada_4
+      rect:
+        serializedVersion: 2
+        x: 2071
+        y: 773
+        width: 189
+        height: 521
+      alignment: 9
+      pivot: {x: .336981237, y: .916426122}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: enforcada_5
+      rect:
+        serializedVersion: 2
+        x: 2538
+        y: 773
+        width: 189
+        height: 521
+      alignment: 9
+      pivot: {x: .323394626, y: .916426122}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: enforcada_6
+      rect:
+        serializedVersion: 2
+        x: 193
+        y: 101
+        width: 182
+        height: 524
+      alignment: 9
+      pivot: {x: .387140453, y: .918941915}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: enforcada_7
+      rect:
+        serializedVersion: 2
+        x: 650
+        y: 100
+        width: 178
+        height: 528
+      alignment: 9
+      pivot: {x: .463938504, y: .91819948}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: enforcada_8
+      rect:
+        serializedVersion: 2
+        x: 1110
+        y: 100
+        width: 179
+        height: 528
+      alignment: 9
+      pivot: {x: .492827863, y: .913336754}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: enforcada_9
+      rect:
+        serializedVersion: 2
+        x: 1565
+        y: 100
+        width: 189
+        height: 527
+      alignment: 9
+      pivot: {x: .547546685, y: .926301122}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: enforcada_10
+      rect:
+        serializedVersion: 2
+        x: 2014
+        y: 100
+        width: 208
+        height: 525
+      alignment: 9
+      pivot: {x: .574063838, y: .918143928}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: enforcada_11
+      rect:
+        serializedVersion: 2
+        x: 2498
+        y: 97
+        width: 207
+        height: 528
+      alignment: 9
+      pivot: {x: .5, y: .91819948}
+      border: {x: 0, y: 0, z: 0, w: 0}
+  spritePackingTag: 
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

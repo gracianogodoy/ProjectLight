@@ -40,49 +40,47 @@ public class ChangeColor : MonoBehaviour
         }
 
         if (stage == 2)
-        { //VERMELHO -> AZUL
+        { //VERMELHO -> AMARELO
             if (LuzOuObs == "Luz")
             {
                 color = new Color(
-                    atual.r - (redux * script.addLuz), 0, atual.b + (redux * script.addLuz));
+                    1, atual.g + (redux * script.addLuz), 0);
                 script.progress += script.addLuz; //adiciona progresso
             }
             if (LuzOuObs == "Obs")
             {
                 color = new Color(
-                    atual.r - (redux * script.addObs), 0, atual.b + (redux * script.addObs));
+					1, atual.g + (redux * script.addObs), 0);
                 script.progress += script.addObs; //remove progresso
             }
         }
 
         if (stage == 3)
-        { //AZUL -> AMARELO
+        { //AMARELO -> ROXO
             if (LuzOuObs == "Luz")
             {
                 color = new Color(
-                    atual.r + (redux * script.addLuz), atual.g + (redux * script.addLuz), atual.b - (redux * script.addLuz));
+					atual.r - (redux/2 * script.addLuz), atual.g - (redux * script.addLuz), atual.b + (redux/2 * script.addLuz));
                 script.progress += script.addLuz; //adiciona progresso
             }
             if (LuzOuObs == "Obs")
             {
                 color = new Color(
-                    atual.r + (redux * script.addObs), atual.g + (redux * script.addObs), atual.b - (redux * script.addObs));
+					atual.r - (redux/2 * script.addObs), atual.g - (redux * script.addObs), atual.b + (redux/2 * script.addObs));
                 script.progress += script.addObs; //remove progresso
             }
         }
 
         if (stage == 4)
-        { //AMARELO -> BRANCO
+        { //ROXO -> BRANCO
             if (LuzOuObs == "Luz")
             {
-                color = new Color(
-                    1, 1, atual.b + (redux * script.addLuz));
+                
                 script.progress += script.addLuz; //adiciona progresso
             }
             if (LuzOuObs == "Obs")
             {
-                color = new Color(
-                    1, 1, atual.b - (redux * script.addObs));
+                
                 script.progress += script.addObs; //remove progresso
             }
         }
@@ -104,6 +102,7 @@ public class ChangeColor : MonoBehaviour
         color = atual;
 
         Debug.Log("r" + atual.r + " g" + atual.g + " b" + atual.b);
+        setColor();
     }
 
     void OnCollisionEnter(Collision col)
@@ -124,6 +123,8 @@ public class ChangeColor : MonoBehaviour
             int num = script.faseAtual;
             mudarCor(num, "Obs");
         }
+
+       // setColor();
     }
 
     private void setColor()

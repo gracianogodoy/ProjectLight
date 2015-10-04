@@ -8,7 +8,8 @@ public class Stage : MonoBehaviour {
 	public int limit = 100;
 	public int addLuz = 4;
 	public int addObs = -10;
-
+	public bool animacaoMid = false;
+	public bool animacaoJaFoiAtivada = false;
 
 	// Use this for initialization
 	void Start () {
@@ -21,12 +22,34 @@ public class Stage : MonoBehaviour {
 		{
 			progress = 0;
 		}
+		if (progress >= 50)
+		{
+			animacaoMid = true;
+		}
+		if (animacaoMid && !animacaoJaFoiAtivada)
+		{
+			animacaoJaFoiAtivada = true;
+			comecarAnimacao(2, faseAtual);
+		}
 		if (progress >= limit)
 		{
 			progress = 0;
+			animacaoJaFoiAtivada = false;
+			//comecarAnimacao(3, faseAtual);
 			setarEstagio(faseAtual+1);
 		}
 	}
+
+	public void comecarAnimacao (int num, int numFase)
+	{
+		//animator.SetInteger("animation", faseAtual*num);
+	}
+	
+	public void OnAnimationEnd()
+	{
+		setarEstagio (faseAtual + 1);
+	}
+
 
 	public void setarEstagio(int num)
 	{
@@ -56,9 +79,9 @@ public class Stage : MonoBehaviour {
 			sloMo(false);
 		}
 		if (faseAtual == 3) {
-			alterarObs(3, 0, 0.2f, 3);
+			alterarObs(2, 0, 0.2f, 3);
 			alterarLuz(1, 3, 0.3f, 3);
-			alterarTaxasDeRepeticao(30, 150, 3);
+			alterarTaxasDeRepeticao(20, 150, 3);
 			sloMo(false);
 		}
 		if (faseAtual == 4) {
