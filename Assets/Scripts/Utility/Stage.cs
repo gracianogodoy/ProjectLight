@@ -24,6 +24,7 @@ public class Stage : MonoBehaviour {
 		if (progress >= limit)
 		{
 			progress = 0;
+			//Ativar animaçao END da fase
 			setarEstagio(faseAtual+1);
 		}
 	}

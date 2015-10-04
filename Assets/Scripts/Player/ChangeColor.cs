@@ -40,33 +40,33 @@ public class ChangeColor : MonoBehaviour
         }
 
         if (stage == 2)
-        { //VERMELHO -> AZUL
+        { //VERMELHO -> AMARELO
             if (LuzOuObs == "Luz")
             {
                 color = new Color(
-                    atual.r - (redux * script.addLuz), 0, atual.b + (redux * script.addLuz));
+                    1, atual.g + (redux * script.addLuz), 0);
                 script.progress += script.addLuz; //adiciona progresso
             }
             if (LuzOuObs == "Obs")
             {
                 color = new Color(
-                    atual.r - (redux * script.addObs), 0, atual.b + (redux * script.addObs));
+					1, atual.g + (redux * script.addObs), 0);
                 script.progress += script.addObs; //remove progresso
             }
         }
 
         if (stage == 3)
-        { //AZUL -> ROXO
+        { //AMARELO -> ROXO
             if (LuzOuObs == "Luz")
             {
                 color = new Color(
-					atual.r - (redux/2 * script.addLuz), 0, 1);
+					atual.r - (redux/2 * script.addLuz), atual.r - (redux * script.addLuz), atual.b + (redux/2 * script.addLuz));
                 script.progress += script.addLuz; //adiciona progresso
             }
             if (LuzOuObs == "Obs")
             {
                 color = new Color(
-					atual.r - (redux/2 * script.addObs), 0, 1);
+					atual.r - (redux/2 * script.addObs), atual.r - (redux * script.addObs), atual.b + (redux/2 * script.addObs));
                 script.progress += script.addObs; //remove progresso
             }
         }
@@ -75,14 +75,12 @@ public class ChangeColor : MonoBehaviour
         { //ROXO -> BRANCO
             if (LuzOuObs == "Luz")
             {
-                color = new Color(
-					atual.r + (redux/2 * script.addLuz), atual.g + (redux * script.addLuz), 1);
+                
                 script.progress += script.addLuz; //adiciona progresso
             }
             if (LuzOuObs == "Obs")
             {
-                color = new Color(
-					atual.r + (redux/2 * script.addObs), atual.g + (redux * script.addObs), 1);
+                
                 script.progress += script.addObs; //remove progresso
             }
         }
