@@ -57,7 +57,7 @@ public class Stage : MonoBehaviour {
 			sloMo(false);
 		}
 		if (faseAtual == 3) {
-			alterarObs(3, 0, 0.2f, 3);
+			alterarObs(1, 0, 0.2f, 3);
 			alterarLuz(1, 3, 0.3f, 3);
 			alterarTaxasDeRepeticao(30, 150, 3);
 			sloMo(false);
