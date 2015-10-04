@@ -49,32 +49,32 @@ public class ChangeColor : MonoBehaviour {
 			}
 		}
 
-		if (stage == 3) { //AZUL -> AMARELO
+		if (stage == 3) { //AZUL -> ROXO
 			if (LuzOuObs == "Luz")
 			{
 				GetComponent<Renderer>().material.color = new Color(
-					atual.r + (redux * script.addLuz), atual.g + (redux * script.addLuz), atual.b - (redux * script.addLuz));
+					atual.r - (redux/2 * script.addLuz), 0, 1);
 				script.progress += script.addLuz; //adiciona progresso
 			}
 			if (LuzOuObs == "Obs")
 			{
 				GetComponent<Renderer>().material.color = new Color(
-					atual.r + (redux * script.addObs), atual.g + (redux * script.addObs), atual.b - (redux * script.addObs));
+					atual.r - (redux/2 * script.addObs), 0, 1);
 				script.progress += script.addObs; //remove progresso
 			}
 		}
 
-		if (stage == 4) { //AMARELO -> BRANCO
+		if (stage == 4) { //ROXO -> BRANCO
 			if (LuzOuObs == "Luz")
 			{
 				GetComponent<Renderer>().material.color = new Color(
-					1, 1, atual.b + (redux * script.addLuz));
+					atual.r + (redux/2 * script.addLuz), atual.g + (redux * script.addLuz), 1);
 				script.progress += script.addLuz; //adiciona progresso
 			}
 			if (LuzOuObs == "Obs")
 			{
 				GetComponent<Renderer>().material.color = new Color(
-					1, 1, atual.b - (redux * script.addObs));
+					atual.r + (redux/2 * script.addObs), atual.g + (redux * script.addObs), 1);
 				script.progress += script.addObs; //remove progresso
 			}
 		}
