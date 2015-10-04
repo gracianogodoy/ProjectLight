@@ -5,6 +5,7 @@ using System.Collections.Generic;
 public class ObstacleGeneration : MonoBehaviour {
 	
 	public GameObject Obstacle;
+	public GameObject Light0;
 	public GameObject Light1;
 	public GameObject Light2;
 	public GameObject Light3;
@@ -191,7 +192,10 @@ public class ObstacleGeneration : MonoBehaviour {
 			MoveToScreen m;
 			switch (type) {
 
-				
+			case 0:
+				a= Light0;
+				break;
+
 			case 1:
 				a= Light1;
 				break;

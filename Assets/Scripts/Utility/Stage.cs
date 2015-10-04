@@ -4,6 +4,11 @@ using System.Collections;
 public class Stage : MonoBehaviour {
 	public int faseAtual;
 	public Canvas canvas;
+	public int progress = 0;
+	public int limit = 100;
+	public int addLuz = 4;
+	public int addObs = -10;
+
 
 	// Use this for initialization
 	void Start () {
@@ -12,7 +17,15 @@ public class Stage : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-	
+		if (progress < 0)
+		{
+			progress = 0;
+		}
+		if (progress >= limit)
+		{
+			progress = 0;
+			setarEstagio(faseAtual+1);
+		}
 	}
 
 	public void setarEstagio(int num)
@@ -37,20 +50,20 @@ public class Stage : MonoBehaviour {
 			sloMo(false);
 		}
 		if (faseAtual == 2) {
-			alterarObs(2, 1, 0.2f, 3);
-			alterarLuz(1, 1, 0.3f, 3);
+			alterarObs(2, 0, 0.2f, 3);
+			alterarLuz(1, 2, 0.3f, 3);
 			alterarTaxasDeRepeticao(30, 150);
 			sloMo(false);
 		}
 		if (faseAtual == 3) {
 			alterarObs(3, 0, 0.2f, 3);
-			alterarLuz(1, 2, 0.3f, 3);
+			alterarLuz(1, 3, 0.3f, 3);
 			alterarTaxasDeRepeticao(30, 150);
 			sloMo(false);
 		}
 		if (faseAtual == 4) {
 			alterarObs(1, 0, 0.2f, 3);
-			alterarLuz(1, 1, 0.3f, 3);
+			alterarLuz(1, 0, 0.3f, 3);
 			alterarTaxasDeRepeticao(30, 150);
 			sloMo(true);
 		}
