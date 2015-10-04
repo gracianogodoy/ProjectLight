@@ -7,6 +7,8 @@ public class Flash : MonoBehaviour {
 	public float alpha = 0;
 	public float velocidadeFade = 0.01f;
 	public CanvasRenderer canvas;
+	public bool ativarAnimacaoInicioDeFase = false;
+
 	// Use this for initialization
 	void Start () {
 		canvas.SetAlpha (0.0f);
@@ -24,12 +26,22 @@ public class Flash : MonoBehaviour {
 		if (alpha > tempoTotalDeFlash)
 		{
 			fadeAtivado = false;
+			ativarAnimacaoInicioDeFase = true;
 		}
 		if (!fadeAtivado)
 		{
 			alpha -= velocidadeFade;
 			if (alpha < 0)
 			{
+				if (ativarAnimacaoInicioDeFase)
+				{
+					ativarAnimacaoInicioDeFase = false;
+
+					GameObject stage = GameObject.Find ("StageManager");
+					Stage script = (Stage)stage.GetComponent (typeof(Stage));
+					script.comecarAnimacao(1, script.faseAtual);
+					//animator.SetInteger("animation", faseAtual);
+				}
 				alpha = 0;
 			}
 		}
