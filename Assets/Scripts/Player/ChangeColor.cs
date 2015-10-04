@@ -60,13 +60,13 @@ public class ChangeColor : MonoBehaviour
             if (LuzOuObs == "Luz")
             {
                 color = new Color(
-					atual.r - (redux/2 * script.addLuz), atual.r - (redux * script.addLuz), atual.b + (redux/2 * script.addLuz));
+					atual.r - (redux/2 * script.addLuz), atual.g - (redux * script.addLuz), atual.b + (redux/2 * script.addLuz));
                 script.progress += script.addLuz; //adiciona progresso
             }
             if (LuzOuObs == "Obs")
             {
                 color = new Color(
-					atual.r - (redux/2 * script.addObs), atual.r - (redux * script.addObs), atual.b + (redux/2 * script.addObs));
+					atual.r - (redux/2 * script.addObs), atual.g - (redux * script.addObs), atual.b + (redux/2 * script.addObs));
                 script.progress += script.addObs; //remove progresso
             }
         }
