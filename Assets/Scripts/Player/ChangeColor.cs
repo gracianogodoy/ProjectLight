@@ -104,6 +104,7 @@ public class ChangeColor : MonoBehaviour
         color = atual;
 
         Debug.Log("r" + atual.r + " g" + atual.g + " b" + atual.b);
+        setColor();
     }
 
     void OnCollisionEnter(Collision col)
@@ -124,6 +125,8 @@ public class ChangeColor : MonoBehaviour
             int num = script.faseAtual;
             mudarCor(num, "Obs");
         }
+
+       // setColor();
     }
 
     private void setColor()
