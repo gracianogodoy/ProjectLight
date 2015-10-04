@@ -15,7 +15,7 @@ public class ObstacleGeneration : MonoBehaviour {
 
 	int ContadorTimerObstaculos;
 	int ContadorTimerLuzes;
-	public float DistanceToOrigin;
+	public float DistanceToOrigin =60;
 	Vector3 Origin;
 	public int dispersionRange;
 	public float RotateSpeed;
@@ -25,7 +25,7 @@ public class ObstacleGeneration : MonoBehaviour {
 	public int TaxaDeRepetiçaoLuzes;
 	public bool obstaculosAtivados = true;
 
-	public float TunnelDistance;
+	public float TunnelDistance =60;
 
 	public int quantidadeObs = 4;
 	public int tipoObs = 0;
@@ -34,7 +34,7 @@ public class ObstacleGeneration : MonoBehaviour {
 
 	public int quantidadeVagantes = 4;
 	public int tipoVagantes = 0;
-	public float velocidadeVagantes = 0.4f;
+	public float velocidadeVagantes = 0.3f;
 	public float anguloVagantes = 3.0f;
 
 
