@@ -5,15 +5,17 @@ using System.Collections.Generic;
 public class ObstacleGeneration : MonoBehaviour {
 	
 	public GameObject Obstacle;
+	public GameObject Light0;
 	public GameObject Light1;
 	public GameObject Light2;
 	public GameObject Light3;
+	public GameObject RoamingLight;
 
 	float angle =0;
 
 	int ContadorTimerObstaculos;
 	int ContadorTimerLuzes;
-	public float DistanceToOrigin;
+	public float DistanceToOrigin =60;
 	Vector3 Origin;
 	public int dispersionRange;
 	public float RotateSpeed;
@@ -23,10 +25,18 @@ public class ObstacleGeneration : MonoBehaviour {
 	public int TaxaDeRepetiçaoLuzes;
 	public bool obstaculosAtivados = true;
 
+	public float TunnelDistance =60;
+
 	public int quantidadeObs = 4;
 	public int tipoObs = 0;
 	public float velocidadeObs = 0.3f;
 	public float anguloObs = 3.0f;
+
+	public int quantidadeVagantes = 4;
+	public int tipoVagantes = 0;
+	public float velocidadeVagantes = 0.3f;
+	public float anguloVagantes = 3.0f;
+
 
 	public int quantidadeLuz = 1;
 	public int tipoLuz = 1;
@@ -46,6 +56,7 @@ public class ObstacleGeneration : MonoBehaviour {
 			ContadorTimerObstaculos++;
 			if (ContadorTimerObstaculos >= TaxaDeRepetiçaoObstaculos) {
 				CreateObstacle(quantidadeObs, tipoObs, velocidadeObs, anguloObs);
+				CreateRoamingLight(quantidadeVagantes,tipoVagantes,velocidadeVagantes,anguloVagantes);
 				ContadorTimerObstaculos=0;
 				TaxaDeRepetiçaoObstaculos += Random.Range(-1,2);
 
@@ -86,6 +97,8 @@ public class ObstacleGeneration : MonoBehaviour {
 
 
 	}
+
+
 	/// <summary>
 	/// Creates the obstacle.
 	/// </summary>
@@ -119,6 +132,51 @@ public class ObstacleGeneration : MonoBehaviour {
 		}
 		
 	}
+
+	void CreateRoamingLight(int quantity, int type,float speed,float angle){
+		for (int i = 0; i < quantity; i++) {
+			
+			GameObject g = null;
+			GameObject a =null;
+			MoveToScreen m;
+			switch (type) {
+				
+				
+			case 0:
+				a= RoamingLight;
+				break;
+				
+					
+			}
+			/*
+			g = (GameObject)Instantiate(a,Origin+randomVector(TunnelDistance),Quaternion.identity);
+			m = g.GetComponent<MoveToScreen> ();
+			float anglePosition = Random.Range(0,2*Mathf.PI);
+			m.Destination = new Vector3 (TunnelDistance*2*Mathf.Cos(anglePosition),TunnelDistance*Mathf.Sin(anglePosition),-15);
+			m.Speed = speed;
+			m.angle = angle;*/
+
+			g = (GameObject)Instantiate(a,Origin,Quaternion.identity);
+			m = g.GetComponent<MoveToScreen> ();
+			if (Random.Range(0,2)==1) {
+				m.Destination = new Vector3 ( Random.Range(-2*TunnelDistance,TunnelDistance),-1*Random.Range(TunnelDistance/4,TunnelDistance/2),-15);
+			}else{
+				m.Destination = new Vector3 ( Random.Range(-2*TunnelDistance,TunnelDistance),Random.Range(TunnelDistance/4,TunnelDistance/2),-15);
+			}
+
+			m.Speed = speed;
+			m.angle = angle;
+
+
+		}
+		
+	}
+
+	Vector3 randomVector(float a){
+		return new Vector3 (Random.Range(-a,a),Random.Range(-a,a),0);
+	
+	}
+
 	/// <summary>
 	/// Creates the obstacle.
 	/// </summary>
@@ -134,7 +192,10 @@ public class ObstacleGeneration : MonoBehaviour {
 			MoveToScreen m;
 			switch (type) {
 
-				
+			case 0:
+				a= Light0;
+				break;
+
 			case 1:
 				a= Light1;
 				break;

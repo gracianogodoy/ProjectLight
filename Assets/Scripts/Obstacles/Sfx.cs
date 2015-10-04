@@ -25,10 +25,26 @@ public class Sfx : MonoBehaviour {
 			shake.shake = 0.5f;
 		}
 
+		if (this.gameObject.name == "Foton0(Clone)")
+		{
+			AudioManager.Instance.Play ("ColisaoBoaVermelha");
+			
+		}
+
 		if (this.gameObject.name == "Foton1(Clone)")
 		{
 			AudioManager.Instance.Play ("ColisaoBoaVermelha");
 
+		}
+		if (this.gameObject.name == "Foton2(Clone)")
+		{
+			AudioManager.Instance.Play ("ColisaoBoaVermelha");
+			
+		}
+		if (this.gameObject.name == "Foton3(Clone)")
+		{
+			AudioManager.Instance.Play ("ColisaoBoaVermelha");
+			
 		}
 
 		Destroy (this.gameObject);
