@@ -21,6 +21,17 @@ public class ObstacleGeneration : MonoBehaviour {
 	public float AproximationSpeed;
 	public int TaxaDeRepetiçaoObstaculos;
 	public int TaxaDeRepetiçaoLuzes;
+	public bool obstaculosAtivados = true;
+
+	public int quantidadeObs = 4;
+	public int tipoObs = 0;
+	public float velocidadeObs = 0.3f;
+	public float anguloObs = 3.0f;
+
+	public int quantidadeLuz = 1;
+	public int tipoLuz = 1;
+	public float velocidadeLuz = 0.6f;
+	public float anguloLuz = 3.0f;
 
 	// Use this for initialization
 	void Start () {
@@ -30,23 +41,25 @@ public class ObstacleGeneration : MonoBehaviour {
 	
 	// Update is called once per frame
 	void FixedUpdate () {
-		ContadorTimerObstaculos++;
-		if (ContadorTimerObstaculos >= TaxaDeRepetiçaoObstaculos) {
-			CreateObstacle(4,0,0.4f,3);
-			ContadorTimerObstaculos=0;
-			TaxaDeRepetiçaoObstaculos += Random.Range(-1,2);
+		if (obstaculosAtivados)
+		{
+			ContadorTimerObstaculos++;
+			if (ContadorTimerObstaculos >= TaxaDeRepetiçaoObstaculos) {
+				CreateObstacle(quantidadeObs, tipoObs, velocidadeObs, anguloObs);
+				ContadorTimerObstaculos=0;
+				TaxaDeRepetiçaoObstaculos += Random.Range(-1,2);
 
+			}
+
+			ContadorTimerLuzes++;
+			if (ContadorTimerLuzes >= TaxaDeRepetiçaoLuzes) {
+				CreateLight(quantidadeLuz, tipoLuz, velocidadeLuz, anguloLuz);
+				ContadorTimerLuzes=0;
+			}
+			
+			ChangeDistance();
+			Rotate ();
 		}
-
-		ContadorTimerLuzes++;
-		if (ContadorTimerLuzes >= TaxaDeRepetiçaoLuzes) {
-			CreateLight(1,1,0.6f,3);
-			ContadorTimerLuzes=0;
-		}
-		
-		ChangeDistance();
-		Rotate ();
-
 	}
 
 	void ChangeDistance(){

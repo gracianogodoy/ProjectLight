@@ -39,4 +39,10 @@ public class Flash : MonoBehaviour {
 	{
 		fadeAtivado = true;
 	}
+
+	public void ativarFlashInicial()
+	{
+		fadeAtivado = true;
+		alpha = 1.5f;
+	}
 }
