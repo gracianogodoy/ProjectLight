@@ -9,7 +9,7 @@ public class ObstacleGeneration : MonoBehaviour {
 	public GameObject Light2;
 	public GameObject Light3;
 
-
+	float angle =0;
 
 	int ContadorTimerObstaculos;
 	int ContadorTimerLuzes;
@@ -45,7 +45,7 @@ public class ObstacleGeneration : MonoBehaviour {
 		}
 		
 		ChangeDistance();
-		//Rotate ();
+		Rotate ();
 
 	}
 
@@ -68,7 +68,8 @@ public class ObstacleGeneration : MonoBehaviour {
 	}
 
 	void Rotate (){
-		//Origin += new Vector3(Origin.x*Mathf.Sin() )
+		angle += RotateSpeed;
+		Origin = new Vector3 (0 + DistanceToOrigin * Mathf.Cos (angle), 0 + DistanceToOrigin * Mathf.Sin (angle), DistanceToOrigin);
 
 
 	}
